@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Check Disease Form</title>
+</head>
+<style>
+    body {
+        background-color: #e8f3f8;
+        font: 1em/1.5 sans-seriff;
+    }
+    
+    h1 {
+        text-align: center;
+        font-size: 50px;
+        color: steelblue;
+    }
+    
+    form {
+        margin: 18px auto;
+        width: 320px;
+        color: steelblue;
+    }
+    
+    input {
+        padding: 8px;
+        font-size: inherit;
+    }
+    
+    .Age {
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    .chest_pain_type {
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    .Resting_blood_pressure {
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    .Serum_Cholestrol {
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    .Fasting_Blood_Sugar {
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    .Resting_ECG {
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    .Thalach_maxHeartRate {
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    .Exercise_induced_angina {
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    .Oldpeak_ST_depression_induced {
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    .Slope_peak_ST_segment {
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    .Ca_major_vessel_colored {
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    .Thal_thalassemia {
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    input[type="radio"] {
+        margin: 0 8px 25px 18px;
+    }
+    
+    input[type="radio"]:first-child {
+        margin-left: 0;
+    }
+    
+    input[type="submit"] {
+        width: 344px;
+        height: 45px;
+        border: none;
+        background: steelblue;
+        color: white;
+    }
+    
+    input:focus {
+        background: white;
+    }
+    
+    input[type="radio"]:checked+label {
+        font-weight: bold;
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <h1>
+        Check Disease!!
+    </h1>
+    <form method="POST" action="{% url 'dises' %}">
+        {% csrf_token %}
+        <div>
+            <input type="radio" id="male" name="male"><label for="male">Male</label>
+            <input type="radio" id="female" name="female"><label for="female">Female</label>
+        </div>
+        <input type="text" class="Age" placeholder="Age" id="age" name="age">
+        <input type="text" class="chest_pain_type" placeholder="chest pain type" id="pain_type" name="pain_type">
+        <input type="text" class="Resting_blood_pressure" placeholder="Resting blood pressure" id="blood_pressure" name="blood_pressure">
+        <input type="text" class="Serum_Cholestrol" placeholder="Serum Cholestrol" id="cholesterol" name="cholesterol">
+        <input type="text" class="Fasting_Blood_Sugar" placeholder="Fasting Blood Sugar" id="blood_sugar" name="blood_sugar">
+        <input type="text" class="Resting_ECG" placeholder="Resting ECG" id="ecg" name="ecg">
+        <input type="text" class="Thalach_maxHeartRate" placeholder="Thalach (maxHeartRate)" id="hart_rate" name="hart_rate">
+        <input type="text" class="Exercise_induced_angina" placeholder="Exang(Exercise induced angina)" id="exang" name="exang">
+        <input type="text" class="Oldpeak_ST_depression_induced" placeholder="Oldpeak(ST depression induced)" id="old_peak" name="old_peak">
+        <input type="text" class="Slope_peak_ST_segment" placeholder="Slope(peak ST segment)" id="slope" name="slope">
+        <input type="text" class="Ca_major_vessel_colored" placeholder="Ca(major vessel colored)" id="ca" name="ca">
+        <input type="text" class="Thal_thalassemia" placeholder="Thal (thalassemia)" id="thal" name="thal">
+
+        <input type="submit" name="submit">
+
+    </form>
+</body>
+
+</html>

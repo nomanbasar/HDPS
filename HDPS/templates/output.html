@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title> resultSheet</title>
+
+    <style>
+        body {
+            background-color: skyblue;
+            font: 1em/1.5 sans-seriff;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 50px;
+            color: black;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 20px;
+            color: black;
+        }
+
+        .wrap {
+            width: 1000px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .card {
+            box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.6);
+            transition: 0.4s;
+            width: 300px;
+            background: #fff;
+            text-align: center;
+            font-size: 16px;
+            font-family: sans-serif;
+            float: left;
+            margin: 10px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: 2px;
+            outline: none;
+            cursor: pointer;
+            padding: 18px 30px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 3px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div><a href="{% url 'dises' %}"><button class="tablinks" onclick="openCity(event, 'Check Again')">Check
+                    Again</button></a></div>
+        <button class="tablinks" onclick="openCity(event, 'Disease Status')">Disease Status</button>
+        <button class="tablinks" onclick="openCity(event, 'User')">User</button>
+        <div>
+            <a href="{% url 'login_view' %}"><button class="tablinks"
+                    onclick="openCity(event, 'Logout')">Logout</button></a>
+
+        </div>
+    </div>
+    <h2>
+        Result of Disease!!
+    </h2>
+
+    {% if result == 0 %}
+    <h4 style="color: green;">
+        You haven't Heart Diseases
+    </h4>
+    {% elif result == 1 %}
+    <h4 style="color: red;">You Have Heart Diseases</h4>
+    {% else %}
+    <h4>Enter your problem first</h4>
+    {% endif %}
+    <div class="wrap">
+        <div class="card">
+            <div class="container">
+                <h3>
+                    <b> KNN</b>
+                </h3>
+                <p>Acuracy is 89%</p>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container">
+                <h3>
+                    <b> AdaBoost</b>
+                </h3>
+                <p>Acuracy is 83%</p>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container">
+                <h3>
+                    <b> Logistic Regression</b>
+                </h3>
+                <p>Acuracy is 85%</p>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container">
+                <h3>
+                    <b> SVM</b>
+                </h3>
+                <p>Acuracy is 85%</p>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container">
+                <h3>
+                    <b> Naive Bayes</b>
+                </h3>
+                <p>Acuracy is 82%</p>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container">
+                <h3>
+                    <b> XgBoost</b>
+                </h3>
+                <p>acuracy is 90%</p>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container">
+                <h3>
+                    <b> Decision Tree</b>
+                </h3>
+                <p>Acuracy is 99%</p>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container">
+                <h3>
+                    <b> Random Forest</b>
+                </h3>
+                <p>Acuracy is 99%</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
